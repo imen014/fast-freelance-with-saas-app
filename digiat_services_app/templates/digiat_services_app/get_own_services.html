@@ -1,0 +1,29 @@
+{% extends 'fallahin_freelance_app/base.html' %}
+
+{% block title %}Page d'accueil{% endblock %}
+
+{% block content %}
+
+{{message}}
+
+
+{% for service in services %}
+{{service.title}} - 
+description : {{service.description}} pts to enjoy the service 
+ {{service.pts_enjoy_service}}
+ <a href="{%  url 'delete_digital_service' service.id %}" >Delete</a>
+  <a href="{%  url 'update_digital_service' service.id %}" >Update</a>
+
+
+<iframe width="600" height="400" src="{{service.video_url}}" allow="autoplay; encrypted-media" frameborder="0" allowfullscreen></iframe>
+<a href="{% url 'get_service_details' service.id  %}">Get service details</a>
+
+{% endfor %}
+{% if messages %}
+    <ul>
+        {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+{% endblock %}

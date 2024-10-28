@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+{% load custom_filters %}
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plateforme Freelance</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .banner {
+      background-color: #007bff;
+      color: white;
+      padding: 100px 0;
+      text-align: center;
+    }
+    .services {
+      margin-top: 30px;
+    }
+    .card {
+      margin-bottom: 20px;
+    }
+    .testimonial {
+      font-style: italic;
+      color: #666;
+    }
+    .footer {
+      background-color: #333;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Freelance Platform</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active"><a class="nav-link" href="#">Accueil</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Témoignages</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Banner -->
+<div class="banner">
+  <h1>Bienvenue sur la Plateforme Freelance</h1>
+  <p>Trouvez des freelances qualifiés pour vos projets</p>
+</div>
+
+<!-- Services Section -->
+<div class="container services">
+  <h2 class="text-center">Nos Services</h2>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <img src="https://via.placeholder.com/150" class="card-img-top" alt="Service 1">
+        <div class="card-body">
+          <h5 class="card-title">Développement Web</h5>
+          <p class="card-text">Offrez un site web moderne et performant pour votre entreprise.</p>
+          <a href="#" class="btn btn-primary">En savoir plus</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <img src="https://via.placeholder.com/150" class="card-img-top" alt="Service 2">
+        <div class="card-body">
+          <h5 class="card-title">Graphisme & Design</h5>
+          <p class="card-text">Conception graphique pour vos supports de communication.</p>
+          <a href="#" class="btn btn-primary">En savoir plus</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <img src="https://via.placeholder.com/150" class="card-img-top" alt="Service 3">
+        <div class="card-body">
+          <h5 class="card-title">Rédaction de Contenu</h5>
+          <p class="card-text">Création de contenu engageant pour vos plateformes digitales.</p>
+          <a href="#" class="btn btn-primary">En savoir plus</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Testimonials Section -->
+<div class="container mt-5">
+  <h2 class="text-center">Témoignages</h2>
+  <div class="row">
+    <div class="col-md-6">
+      <blockquote class="testimonial">"J'ai trouvé un excellent freelance pour mon projet de site web, rapide et professionnel !"</blockquote>
+      <p>- Marie Dupont</p>
+    </div>
+    <div class="col-md-6">
+      <blockquote class="testimonial">"Très satisfait du service, des talents variés et de qualité disponibles."</blockquote>
+      <p>- Julien Moreau</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+{% block content %}
+
+{% endblock content %}
+
+
+
+
+
+
+
+
+<!-- Footer -->
+<div class="footer">
+  <p>&copy; 2024 Plateforme Freelance. Tous droits réservés.</p>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

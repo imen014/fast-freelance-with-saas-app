@@ -1,0 +1,10 @@
+{% extends   'account_creation_app/base.html'  %} 
+
+{% block content %}
+
+
+
+<a href="{% url 'get_accounts' %}">See accounts</a><br/>
+<a href="{% url 'logout_user' %}">Log out</a>
+
+{% endblock content %}

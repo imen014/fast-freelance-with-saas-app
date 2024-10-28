@@ -1,0 +1,30 @@
+{% extends "audioStoreApp/base.html" %}
+
+
+{% block content %}
+<ul>
+{% for memory in memories  %}
+<li>
+<div>
+{{ memory.audio  }}
+{{ memory.text  }}
+<div>
+<div>
+<img src="{{ memory.image.url }}" />
+</div>
+<div>
+<audio controls>
+    <source src="{{ memory.audio.url  }}" type="audio/mp3">
+</audio>
+</div>
+</li>
+<a href="{%  url 'modify_memory' memory.id  %}">Modify</a> &nbsp;  &nbsp;  &nbsp;
+<a href="{%  url 'delete_memory' memory.id  %}">Delete</a>
+
+
+{% endfor  %}
+</ul>
+<a href="{%  url 'delete_memories'  %}">Delete All Memories</a> &nbsp;  &nbsp;  &nbsp;
+<a href="{%  url 'create_memory'  %}">Create Memory</a>
+
+{% endblock content %}

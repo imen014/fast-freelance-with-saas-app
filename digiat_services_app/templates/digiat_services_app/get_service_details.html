@@ -1,0 +1,34 @@
+{% extends 'fallahin_freelance_app/base.html' %}
+
+{% block title %}Détails du Service{% endblock %}
+
+{% block content %}
+
+{{ message }}
+
+<h2>{{ service.title }}</h2>
+<p>Description : {{ service.description }}</p>
+<p>Points pour profiter du service : {{ service.pts_enjoy_service }}</p>
+
+<a href="{% url 'delete_digital_service' service.id %}">Supprimer</a>
+<a href="{% url 'update_digital_service' service.id %}">Modifier</a>
+
+<!-- Affichage de la vidéo -->
+{% if service.video_url %}
+    <iframe width="600" height="400" src="{{ service.video_url }}" allow="autoplay; encrypted-media" frameborder="0" allowfullscreen></iframe>
+{% else %}
+    <p>Aucune vidéo disponible.</p>
+{% endif %}
+
+<!-- Affichage des images -->
+<div>
+    {% for image in images %}
+        <img src="{{ image.image.url }}" alt="Image du service {{ service.title }}" width="200" height="150"/>
+    {% empty %}
+        <p>Aucune image disponible pour ce service.</p>
+    {% endfor %}
+</div>
+provider {{service.user_creator.username}}
+<a href="{% url 'get_profil' service.user_creator.id %}">Get profil</a>
+
+{% endblock %}

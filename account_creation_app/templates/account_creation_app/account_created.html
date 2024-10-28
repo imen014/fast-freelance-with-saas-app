@@ -1,0 +1,14 @@
+{% extends   'account_creation_app/base.html'  %} 
+{% load custom_filters %}
+
+{% block content %}
+{{ message }}
+<form action="#" method="POST" enctype="multipart/form-data">
+{% csrf_token %}
+{{ form.as_p }}
+<input type="submit" />
+</form>
+
+<a href="{% url 'login_user' %}">login </a>
+
+{% endblock content %}

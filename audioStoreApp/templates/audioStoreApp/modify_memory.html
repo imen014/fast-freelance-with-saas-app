@@ -1,0 +1,12 @@
+{% extends "audioStoreApp/base.html" %}
+
+
+{% block content %}
+<form method="POST" enctype="multipart/form-data">
+{% csrf_token %}
+{{ form.as_p  }}
+<input type="submit" />
+
+</form>
+<a href="{% url 'create_memory'  %}">Create Memory</a>
+{% endblock content %}

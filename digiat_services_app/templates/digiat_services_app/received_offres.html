@@ -1,0 +1,24 @@
+{% extends 'fallahin_freelance_app/base.html' %}
+
+{% block title %}Page d'accueil{% endblock %}
+
+{% block content %}
+
+{% if  offres %}
+{% for offre in  offres %}
+offre proposer: {{offre.proposer.username}}
+offre date: {{offre.date}}
+service title : {{offre.service.title}}
+service description : {{offre.service.description}}
+offre state: {{offre.state}}
+
+{{offre.description}}
+<a href="{% url 'get_profil' offre.proposer.id %}">Get profil</a>
+<a href="{% url 'change_service_state' offre.id %}">change service state</a>
+
+{% endfor %}
+
+
+{% endif %}
+{% endblock %}
+ 

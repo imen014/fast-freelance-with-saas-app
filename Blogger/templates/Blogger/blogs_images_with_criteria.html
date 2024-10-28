@@ -1,0 +1,24 @@
+ {% extends "Blogger/base.html" %} 
+
+
+ {% block content %}
+
+
+{% for blog_image in blogs_images_list %}
+<div>
+<img src="{{ blog_image.blog_image.image.url }}"> <br/>
+{{ blog_image.blog_title  }}
+<div>
+<div>
+
+{{ blog_image.blog_content  }}
+{{ blog_image.blog_creator  }}
+
+<form method="GET" action="{% url 'modify_blog_image' blog_image.id  %}"><input type="submit" value="update" /></form>
+<form method="GET" action="{% url 'delete_blog_image' blog_image.id  %}"><input type="submit" value="delete" /></form>
+<div>
+
+{% endfor %}
+{% endblock content %}
+
+

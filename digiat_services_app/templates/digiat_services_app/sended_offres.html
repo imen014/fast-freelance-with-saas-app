@@ -1,0 +1,21 @@
+{% extends 'fallahin_freelance_app/base.html' %}
+
+{% block title %}Page d'accueil{% endblock %}
+
+{% block content %}
+
+{% if  offres %}
+{% for offre in  offres %}
+offre receiver: {{offre.offer_receiver.username}}
+offre date: {{offre.date}}
+service title : {{offre.service.title}}
+service description : {{offre.service.description}}
+offre state: {{offre.state}}
+
+{{offre.description}}
+{% endfor %}
+
+
+{% endif %}
+{% endblock %}
+ 

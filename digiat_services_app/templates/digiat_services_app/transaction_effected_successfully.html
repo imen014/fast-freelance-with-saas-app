@@ -1,0 +1,15 @@
+{% extends 'fallahin_freelance_app/base.html' %}
+
+{% block title %}Page d'accueil{% endblock %}
+
+{% block content %}
+
+{{message}}
+
+
+{% for message in messages %}
+{{message}}
+
+{% endfor %}
+
+{% endblock %}

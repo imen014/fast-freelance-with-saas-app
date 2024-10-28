@@ -1,0 +1,61 @@
+{% extends   'account_creation_app/base.html'  %} 
+
+{% block content %}
+<div>
+<img src="{{ account.image.url }}">
+</div>
+
+<div>
+<p><u>Email</u></p>
+{{  account.email}}
+</div><br/>
+
+<div>
+<p><u>Date of birth</u></p>
+{{  account.date_naissance}}
+</div><br/>
+
+<div>
+<p><u>Place of residence</u></p>
+{{  account.lieu_residence}}
+</div><br/>
+
+<div>
+<p><u>Social media</u></p>
+<a href="{{  account.social_media}}">Social media</a>
+</div><br/>
+
+<div>
+<p><u>Description</u></p>
+{{  account.description}}
+</div><br/>
+
+<div>
+<p><u>Current employment</u></p>
+{{  account.current_employment}}
+</div><br/>
+
+<div>
+<p><u>Academic degrees</u></p>
+{{  account.academic_degrees}}
+</div><br/>
+
+<div>
+<p><u>Professional skills</u></p>
+{{  account.professional_skills}}
+</div><br/>
+
+<div>
+<p><u>Hobbies</u></p>
+{{  account.hobbies}}
+</div><br/>
+
+
+
+<p><h3>welcome to your account: {{ account.username }}</h3></p>
+
+<button value="modify profile"><a href="{% url 'modify_profile' account.id %}">modify profile</a></button><br/>
+<button value="delete account"><a href="{% url 'delete_account' account.id %}">delete account</a></button><br/>
+<button value="logout"><a href="{% url 'logout_user' %}">logout</a></button><br/>
+
+{% endblock content %}

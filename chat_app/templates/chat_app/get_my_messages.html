@@ -1,0 +1,58 @@
+{% extends "chat_app/base.html" %}
+
+{% block content %}
+
+
+<meta http-equiv="refresh" content="20">
+{%  load static %}
+welcome {{ username  }} in your box message
+
+
+<h3>Messages</h3>
+<ul>
+{%  for message in messages %}
+<li>
+sender:{{  message.sender }} <br/>
+receiver:{{  message.receiver}} <br/>
+content:{{  message.content }} <br/>
+at - {{  message.time }} <br/>
+
+</a></button>
+<button type="submit"><a href="{% url 'answer_choosed_message' message.id %}"><img src="{{  message.sender.image.url }}" alt="sender image" width="20" height="20"/></a></button>
+
+
+</li>
+{%  endfor %}
+</ul>
+
+<h3>Answers</h3>
+<ul>
+{%  for answer in answers %}
+<li>
+sender:{{  answer.sender }} <br/>
+receiver:{{  answer.receiver}} <br/>
+content:{{  answer.content }} <br/>
+at - {{  answer.time }}
+</a></button>
+<button type="submit"><a href="{% url 'answer_an_answer_from_a_list' answer.id %}"><img src="{{  answer.sender.image.url }}" alt="sender image" width="20" height="20"/></a></button>
+
+
+</li>
+{%  endfor %}
+</ul>
+
+
+
+
+
+
+<button type="submit"><a href="{% url 'answer_message'  %}"><img src="{{  request.user.image.url }}" alt="sender image" width="20" height="20"/></a></button>
+<a href="{% url 'answer_message'  %}">Answer Last Message</a>
+<br/>
+<form method="POST" action="{%  url 'create_message' %}">
+{% csrf_token %}
+{{ message_form.as_p }}
+<input type="submit" />
+</form>
+<a href="{% url 'delete_all_my_messages'  %}">Delete All My Messages</a>
+{% endblock content %}

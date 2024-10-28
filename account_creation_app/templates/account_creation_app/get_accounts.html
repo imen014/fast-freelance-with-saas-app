@@ -1,0 +1,14 @@
+{% extends   'account_creation_app/base.html'  %} 
+
+{% block content %}
+<h2>available accounts</h2>
+{% for account in accounts %}
+<a href="{% url 'show_account'  account.id %}">{{ account.username }}</a>
+<br/>
+
+
+{% endfor %}
+
+<button><a href="{% url 'create_account' %}">create account</a></button>
+
+{% endblock content %}

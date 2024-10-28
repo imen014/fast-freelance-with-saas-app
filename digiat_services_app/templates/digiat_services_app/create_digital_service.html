@@ -1,0 +1,17 @@
+{% extends 'fallahin_freelance_app/base.html' %}
+
+{% block title %}Create Digital Service{% endblock %}
+
+{% block content %}
+{{ message }}
+
+<form method="POST" enctype="multipart/form-data">  <!-- Corrected enctype -->
+    {% csrf_token %}
+    {{ service.as_p }}  <!-- Renders the fields of the DigitalServiceForm -->
+    
+    <h3>Upload Images:</h3>
+    <input type="file" name="images" multiple accept="image/*" />  <!-- Input for multiple images -->
+
+    <input type="submit" value="Save" />
+</form>
+{% endblock %}

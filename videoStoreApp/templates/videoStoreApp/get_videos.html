@@ -1,0 +1,24 @@
+{% extends "videoStoreApp/base.html" %}  
+
+{% block content %}
+{{ message  }}
+<ul>
+{% for video in videos  %}
+<li>
+<div>
+<video height="640" width="360" controls>
+<source src="{{ video.video.url  }}" type="{{ video.video.content_type  }}">
+</video>
+<legend>{{  video.titre }} <br/> created by {{  video.creator }} </legend>
+</div>
+</li>
+<button type="submit"><a href="{% url 'modify_video' video.id  %}">Modify</a></button>
+<button type="submit"><a href="{% url 'delete_video' video.id  %}">Delete</a></button>
+
+
+{% endfor  %}
+</ul>
+<a href="{% url 'upload_video'  %}">Upload Video</a><br/>
+<button type="submit"><a href="{% url 'clear_box_videos'  %}">Clear Box Videos</a></button>
+
+{% endblock content %}

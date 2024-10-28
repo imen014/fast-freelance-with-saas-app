@@ -1,0 +1,93 @@
+{% load static   %}
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF8"/>
+<link rel="icon" href="{% static 'home_image.ico' %}" type="image/x-icon" />
+<style>
+/* Apply a basic reset to remove default styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f2f2f2;
+}
+
+/* Chat container styling */
+.chat-container {
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form styling */
+form {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+inpt[type="submit"] {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Message list styling */
+ul{
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background-color: #e6e6e6;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+/* Button styling */
+button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Hover effect on the button */
+button:hover {
+    background-color: #2980b9;
+}
+
+
+</style>
+</head>
+<body>
+<div class=".chat-container">
+{% block content %}
+
+
+{% endblock content %}
+</div>
+</body>
+</html>

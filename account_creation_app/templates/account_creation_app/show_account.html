@@ -1,0 +1,12 @@
+{% extends   'account_creation_app/base.html'  %} 
+
+{% block content %}
+<div>
+<img src="{{ account_instance.image.url }}">
+</div>
+<div>
+
+{{  account_instance.email}}
+</div>
+<a href="{% url 'see_informations' account_instance.id %}"">See More</a>
+{% endblock content %}

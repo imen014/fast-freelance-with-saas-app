@@ -1,0 +1,37 @@
+{% extends 'fallahin_freelance_app/base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+my services buyed
+{% block content %}
+
+{% if transactions %}
+{% for transaction in transactions %}
+
+seller: {{transaction.seller}}
+title: {{transaction.service.title}}
+date: {{transaction.date}}
+points used: {{transaction.pts_used}}
+{% endfor %}
+{% else  %}
+<p> No transactions available</p>
+{% endif %}
+----------------------
+selled services
+{% if selled_services %}
+{% for service in selled_services %}
+
+
+
+
+<p class="text-warning">  seller: {{service.seller}} </p>   
+<p class="text-warning">title: {{service.title}} </p>   
+<p class="text-warning"> date: {{service.date}}</p>   
+<p class="text-warning"> points used: {{service.pts_used}} </p>   
+{% endfor %}
+{% else  %}
+<p> No transactions available</p>
+{% endif %}
+{% endblock %}
+
+
+   

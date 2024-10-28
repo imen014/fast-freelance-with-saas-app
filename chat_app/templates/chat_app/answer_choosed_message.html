@@ -1,0 +1,15 @@
+{% extends "chat_app/base.html" %}
+
+{% block content %}
+<meta http-equiv="refresh" content="20">
+
+{{  comment }}
+<form method="POST">
+{% csrf_token %}
+{{ answer_form.as_p }}
+<input type="submit" />
+</form>
+
+
+
+{% endblock content %}

@@ -1,0 +1,18 @@
+{% extends 'photo_management_app/base.html' %} 
+
+{% block content %}
+{% for photo in photos %}
+<div>
+<img src="{{ photo.image.url }}">
+</div>
+<div>
+uploader - {{ photo.uploader }}
+date creation - {{ photo.date_creation}}
+caption - {{ photo.caption }}
+<form action="{% url 'modifier-photo' photo.id %}" mehod="GET"><input type="submit" value="update" /> </form>
+<form action="{%  url 'delete-photo' photo.id %}" mehod="GET"><input type="submit" value="delete" /> </form>
+
+</div>
+{% endfor %}
+<a href="{% url 'upload-photo' %}"><strong>upload photo</strong></a>
+{% endblock content %}

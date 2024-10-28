@@ -1,0 +1,14 @@
+ {% extends "Blogger/base.html" %} 
+
+
+ {% block content %}
+ 
+{% for blog in blogs %}
+ {% for image in images  %}
+  <img src="{{ image.image.url }}">
+<h4>blog title </h4> {{ blog.blog_title }}
+<h4>blog content </h4> {{ blog.blog_content }}
+<h4>blog creator </h4> {{ blog.blog_creator }}
+{% endfor %}
+{% endfor %}
+{% endblock content %}

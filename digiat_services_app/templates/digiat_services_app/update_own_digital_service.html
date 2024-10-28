@@ -1,0 +1,16 @@
+{% extends 'fallahin_freelance_app/base.html' %}
+
+{% block title %}Page d'accueil{% endblock %}
+
+{% block content %}
+
+{{message}}
+
+
+<form action="#" method="POST">
+{% csrf_token %}
+{{service}}
+<input type="submit" value="save" />
+
+</form>
+{% endblock %}

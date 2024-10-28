@@ -1,0 +1,30 @@
+{% extends 'fallahin_freelance_app/base.html' %}
+
+{% block title %}Page d'accueil{% endblock %}
+
+{% block content %}
+
+{{message}}
+
+<a href="{% url 'create_digital_service'  %}">Add</a>
+
+{% for service in services %}
+{{service.title}} Created by  {{service.user_creator.username}} 
+description : {{service.description}} pts to enjoy the service 
+ points to enjoy service: {{service.pts_enjoy_service}}
+    <iframe width="300" height="200" src="{{service.video_url}}" allow="autoplay; encrypted-media" frameborder="0" allowfullscreen><a href="#"></a></iframe>
+<video width="640" height="360" controls>
+    <source src="{{service.video_url}}" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+<a href="{% url 'get_service_details' service.id  %}">Get service details</a>
+   {% if request.user != service.user_creator %}
+            {% if service.id in bought_services %}
+                <p>Vous avez déjà acheté ce service.</p>
+            {% else %}
+                <a href="{% url 'ask_new_service' service.id  %}">Ask service</a>
+            {% endif %}
+        {% endif %}
+{% endfor %}
+
+{% endblock %}
